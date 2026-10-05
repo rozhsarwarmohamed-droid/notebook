@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My English Notebook – Unit 3 &amp; 4</title>
+<style>
+:root{--bg:#eaf4ff;--grid:#c6dcf7;--ink:#1d2b53;--txt:#1d2b53;--sh:#1d2b53;--c:#e63946;--f:ui-rounded,"Arial Rounded MT Bold","Chalkboard SE","Comic Sans MS","Trebuchet MS",sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#141b2e;--grid:#243050;--txt:#eef2ff;--sh:#000}}
+*{box-sizing:border-box}
+body{margin:0;padding:14px;color:var(--txt);font:16px/1.4 var(--f);background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:26px 26px}
+.wrap{max-width:900px;margin:0 auto}
+.st{border:3px solid var(--ink);box-shadow:4px 5px 0 var(--sh);border-radius:20px;color:var(--ink)}
+.top{background:#fff;padding:12px 16px;margin-bottom:12px;transform:rotate(-.7deg);display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.owl{font-size:3.4rem;line-height:1}
+.bub{background:#fff0a8;border:3px solid var(--ink);border-radius:18px 18px 18px 4px;padding:6px 12px;font-weight:800}
+.tot{margin-left:auto;background:#ffe14d;border:3px solid var(--ink);border-radius:99px;padding:4px 14px;font-weight:800}
+h1{order:1;flex:1 0 100%;margin:0;font-size:clamp(1.8rem,8vw,2.6rem);line-height:1.1}
+h1 span{display:inline-block}
+h2,h3{margin:.2em 0}
+h3{margin-top:22px;font-size:1.3rem}
+.key{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+.key span{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:99px;padding:2px 12px;font-size:.85rem;font-weight:700}
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;position:relative;margin-bottom:18px}
+.path::before{content:"";position:absolute;left:12%;right:12%;top:32px;border-top:5px dotted var(--txt);opacity:.4}
+.stop{background:none;border:0;font:700 .78rem/1.2 var(--f);color:var(--txt);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;padding:4px 0}
+.stop i{font-style:normal;width:58px;height:58px;border-radius:50%;background:#fff;border:3px solid var(--ink);box-shadow:3px 4px 0 var(--sh);display:grid;place-items:center;font-size:1.8rem;transition:transform .2s}
+.stop.on i{background:var(--k);transform:scale(1.2) rotate(-6deg)}
+.stop.ok::after{content:"🏆";position:absolute;top:-4px;left:calc(50% + 14px);font-size:1.3rem}
+button:focus-visible{outline:4px solid #ffc400;outline-offset:2px}
+.hd{padding:14px 16px;background:color-mix(in srgb,var(--c) 35%,#fff);display:flex;gap:14px;align-items:center}
+.big{font-size:3.4rem;line-height:1}
+.hd h2{font-size:1.5rem}
+.nt{font-size:.82rem;opacity:.85}
+.bar{height:16px;background:#fff;border:3px solid var(--ink);border-radius:99px;overflow:hidden;margin:8px 0 4px}
+.bar i{display:block;height:100%;width:0;background:var(--c);transition:width .4s}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:18px 16px}
+.card{background:var(--k);padding:14px 10px 12px;text-align:center;position:relative;cursor:pointer;transition:transform .15s;transform:rotate(-1.2deg)}
+.card:nth-child(even){transform:rotate(1deg)}
+.card:hover,.card:active{transform:rotate(0) scale(1.04)}
+.card:nth-child(6n+1){--k:#ffd3d6}.card:nth-child(6n+2){--k:#c9f3e6}.card:nth-child(6n+3){--k:#fff0a8}
+.card:nth-child(6n+4){--k:#cfe5ff}.card:nth-child(6n+5){--k:#e2d6ff}.card:nth-child(6n+6){--k:#ffd9ec}
+.card.done{outline:4px solid #ffc400;outline-offset:2px}
+.card.done::before{content:"⭐";position:absolute;top:-14px;left:-10px;font-size:2rem;animation:pop .4s}
+.em{width:78px;height:78px;margin:0 auto 6px;border-radius:50%;background:#fff;border:3px solid var(--ink);display:grid;place-items:center;font-size:2.6rem}
+.en{font-size:1.5rem;font-weight:800;line-height:1.15}
+.en b{color:#d62839;text-decoration:underline wavy;text-decoration-thickness:2px}
+.tr{font-weight:700;margin:4px 0}
+.pr{display:inline-block;margin:4px 0;background:#fff;border:3px solid var(--ink);border-radius:99px;padding:2px 12px;font-size:1.1rem;font-weight:800}
+.pr::before{content:"🗣️ "}
+.say{border:3px solid var(--ink);background:#fff;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1.05rem;flex:none}
+.say:active{transform:scale(.88)}
+.card .say{position:absolute;top:6px;right:6px}
+.ph{background:#fff;padding:10px 14px;margin:12px 0;display:flex;gap:10px;align-items:center;justify-content:space-between;border-radius:22px 22px 22px 5px}
+.ph .e{font-size:1.15rem;font-weight:800}
+.ph .t{display:inline-block;margin-top:4px;background:#e1ecff;border-radius:10px;padding:2px 8px;font-weight:700}
+mark{background:#ffe14d;color:var(--ink);border-radius:6px;padding:0 5px;box-decoration-break:clone}
+.nx{display:block;margin:24px auto 8px;background:#ffe14d;border:3px solid var(--ink);box-shadow:4px 5px 0 var(--sh);border-radius:99px;padding:10px 24px;font:800 1.1rem var(--f);color:var(--ink);cursor:pointer}
+.cf{position:fixed;top:-40px;font-size:1.8rem;pointer-events:none;z-index:9;animation:fall 2.4s ease-in forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.6)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head>
+<body><div class="wrap">
+<div class="top st"><div class="owl">🦉</div><div class="bub">Hello! Merhaba! 👋<br>Hadi öğrenelim!</div><div class="tot">⭐ <b id="tot">0</b> / 20</div><h1 id="ttl">My English Notebook</h1></div>
+<div class="nt">Unit 3, Lesson 3 → Unit 4, Lesson 2 · Look, say, learn!</div>
+<div class="key"><span>🇹🇷 Türkçe = Turkish</span><span>🗣️ Söylenişi = how to say it</span><span>🎨 Resim = picture</span><span><mark>Yellow</mark> = change this word!</span></div>
+<div class="path" id="path"></div><main id="m"></main>
+</div>
+<script>
+const L=[
+{t:"Unit 3 · Lesson 3",s:"Spelling (ar sound) & Reading: Countries & Flags",c:"#e63946",e:"🚩",
+w:[["flag","bayrak","fleg","Draw a small flag","🚩"],["thousand","bin","tauzınd","1,000","🔢"],["million","milyon","milyın","1,000,000","💰"],
+["car","araba","kar","ar sound","🚗"],["park","park","park","ar sound","🌳"],["scarf","atkı / eşarp","skarf","ar sound","🧣"],
+["market / bazaar","pazar / çarşı","market / bazar","ar sound","🛒"],["guitar","gitar","gitar","ar sound","🎸"]],
+p:[["Which country is it?","Hangi ülke?"],["Let's go to the [park / market].","[Parka / pazara] gidelim."],["I like that [scarf].","O [atkıyı] beğendim."]]},
+{t:"Unit 3 · Lesson 4",s:"Let's Talk About Countries & Flags",c:"#1d9a8a",e:"🌍",
+w:[["people","insanlar / kişi","piypıl","Group of people","👨‍👩‍👧"],["population","nüfus","popüleşın","Total count","📊"],["colour","renk","kalır","Red, blue, green...","🎨"]],
+p:[["How many people live in [Iraq]?","[Irak]'ta kaç kişi yaşıyor?"],["There are [31] million people.","[31] milyon kişi var."],["What colour is the flag of [Lebanon]?","[Lübnan]'ın bayrağı ne renk?"],["The flag of [Iraq] is [red, white, black, and green].","[Irak]'ın bayrağı [kırmızı, beyaz, siyah ve yeşil]."]]},
+{t:"Unit 4 · Lesson 1",s:"Possessions",c:"#e08a00",e:"🎒",
+w:[["skateboard","kaykay","skeytbord","Draw a skateboard","🛹"],["camera","fotoğraf makinesi / kamera","kamera","Cognate (sounds like Turkish!)","📷"],["ball","top","bol","Draw a ball","⚽"],
+["CD player","CD çalar","sidi pleyır","Draw a CD","💿"],["calculator","hesap makinesi","kalküleytır","Draw a calculator","🧮"],["racket","raket","raket","Cognate (sounds like Turkish!)","🎾"]],
+p:[["How many [cameras] are there?","Kaç tane [kamera] var?"],["There are [eight].","[Sekiz] tane var."],["Is there a [blue CD player]?","[Mavi bir CD çalar] var mı?"],["Where are the [rulers]?","[Cetveller] nerede?"],["They're next to the [mobile phones].","[Cep telefonlarının] yanında."]]},
+{t:"Unit 4 · Lesson 2",s:"Possessive 's & Descriptions",c:"#7a52d1",e:"💬",
+w:[["favourite","en sevilen / favori","feyvırıt","e.g., favourite place","⭐"],["place","yer / mekan","pleys","Location","📍"],["Possessive 's","-in / -ın / -nin / -nın (aitlik eki)","","Add 's to names: Oliver's","✏️"]],
+p:[["This is [Oliver]'s camera.","Bu [Oliver]'ın kamerası."],["The teacher's bag is [blue].","Öğretmenin çantası [mavi]."],["What colour is [Ruby]'s bag?","[Ruby]'nin çantası ne renk?"],["I think... / I don't know.","Bence... / Bilmiyorum."]]}
+];
+const D=L.map(()=>new Set()),$=s=>document.querySelector(s),P=["#e63946","#f08c00","#12a58c","#2f6fed","#7a52d1","#e0338a"];
+const hl=s=>s.replace(/\[(.*?)\]/g,"<mark>$1</mark>");
+const say=t=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.replace(/[\[\]]/g,"").replace(/\s*\/\s*/g," or "));u.lang="en-GB";u.rate=.8;speechSynthesis.speak(u)}catch(e){}};
+const boom=()=>{for(let i=0;i<30;i++){const s=document.createElement("span");s.className="cf";s.textContent=["⭐","🎉","✨","🎈","🌟"][i%5];s.style.left=Math.random()*100+"vw";s.style.animationDelay=Math.random()*.6+"s";document.body.append(s);setTimeout(()=>s.remove(),3300)}};
+let cur=0;
+$("#ttl").innerHTML=[..."My English Notebook"].map((ch,i)=>ch==" "?" ":`<span style="color:${P[i%6]};transform:rotate(${i%2?3:-3}deg)">${ch}</span>`).join("");
+$("#path").innerHTML=L.map((l,i)=>`<button class="stop" data-i="${i}" style="--k:${l.c}"><i>${l.e}</i>${l.t.replace(" · ","<br>")}</button>`).join("");
+function bar(){const n=D[cur].size,m=L[cur].w.length;$("#pb").style.width=100*n/m+"%";$("#pc").textContent=n==m?"🎉 Great job! Aferin!":n+" / "+m+" ⭐";
+$("#tot").textContent=D.reduce((a,x)=>a+x.size,0);document.querySelectorAll(".stop").forEach((b,j)=>b.classList.toggle("ok",D[j].size==L[j].w.length))}
+function show(i){cur=i;const l=L[i];document.documentElement.style.setProperty("--c",l.c);
+document.querySelectorAll(".stop").forEach((b,j)=>b.classList.toggle("on",i==j));
+$("#m").innerHTML=`<div class="hd st"><div class="big">${l.e}</div><div style="flex:1"><h2>${l.t}</h2><div>${l.s}</div><div class="bar"><i id="pb"></i></div><b id="pc"></b><div class="nt">Tap 🔊 to listen · Tap a card to get a ⭐ when you know the word</div></div></div>
+<h3>📚 Words · Kelimeler</h3><div class="grid">${l.w.map((w,k)=>`<div class="card st${D[i].has(k)?" done":""}" data-k="${k}"><button class="say" data-s="${w[0]}" aria-label="Listen">🔊</button><div class="em">${w[4]}</div><div class="en">${w[3]=="ar sound"?w[0].replace(/ar/g,"<b>ar</b>"):w[0]}</div><div class="tr">🇹🇷 ${w[1]}</div>${w[2]?`<div class="pr">[${w[2]}]</div>`:""}<div class="nt">${w[3]}</div></div>`).join("")}</div>
+<h3>💬 Sentence frames · Cümle kalıpları</h3>${l.p.map(p=>`<div class="ph st"><div><div class="e">${hl(p[0])}</div><div class="t">🇹🇷 ${hl(p[1])}</div></div><button class="say" data-s="${p[0]}" aria-label="Listen">🔊</button></div>`).join("")}
+<button class="nx" data-i="${(i+1)%L.length}">${i<L.length-1?"Next lesson ➡️":"Start again 🔁"}</button>`;bar()}
+$("#path").onclick=e=>{const b=e.target.closest(".stop");if(b){show(+b.dataset.i);scrollTo(0,0)}};
+$("#m").onclick=e=>{const s=e.target.closest(".say");if(s)return say(s.dataset.s);const n=e.target.closest(".nx");if(n){show(+n.dataset.i);return scrollTo(0,0)}
+const c=e.target.closest(".card");if(c){const k=+c.dataset.k,d=D[cur];d.has(k)?d.delete(k):d.add(k);c.classList.toggle("done");bar();if(d.has(k)&&d.size==L[cur].w.length)boom()}};
+show(0);
+</script></body></html>
